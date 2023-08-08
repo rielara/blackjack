@@ -27,6 +27,12 @@ function getRandomCard() {
 }
 
 function startGame() {
+    if (player.chips < 50) {
+        message = "You're out of chips, sorry!";
+        messageEl.textContent = message;
+        return;
+    }
+    
     isAlive = true;
     hasBlackJack = false; // Reset the hasBlackJack flag
     let firstCard = getRandomCard();
@@ -48,20 +54,32 @@ function renderGame() {
     } else if (sum === 21) {
         message = "You've got Blackjack!";
         hasBlackJack = true;
-        player.chips += 50; 
+        player.chips += 10; 
     } else {
         message = "You're out of the game!";
         isAlive = false;
         if (!hasBlackJack) {
-            player.chips -= 50; 
+            player.chips -= 10; 
         }
     }
+    
+    if (player.chips <= 0) {
+        message = "You're out of chips, sorry!";
+        isAlive = false;
+    }
+    
     messageEl.textContent = message;
     playerEl.textContent = player.name + ": $" + player.chips;
 }
 
 function newCard() {
     if (isAlive === true && hasBlackJack === false) {
+        if (player.chips < 50) {
+            message = "You're out of chips, sorry!";
+            messageEl.textContent = message;
+            return;
+        }
+        
         let card = getRandomCard();
         sum += card;
         cards.push(card);
