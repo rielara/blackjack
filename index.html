@@ -1,15 +1,24 @@
+<!DOCTYPE html>
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="content">
         <h1>Blackjack</h1>
         <p id="message-el">Want to play a round?</p>
-        <p id="cards-el">Cards:</p>
+        <div id="cards-el" class="cards-container">
+            <!-- Card images will be dynamically added here -->
+        </div>
         <p id="sum-el">Sum:</p>
-        <button onclick="startGame()">START GAME</button>
-        <button onclick="newCard()">NEW CARD</button>
+        <button id="start-btn">START GAME</button>
+        <button id="new-card-btn">NEW CARD</button>
         <p id="player-el">Player: </p>
-        <script src="index.js"></script>
-    </body>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+
 </html>

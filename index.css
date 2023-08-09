@@ -1,24 +1,28 @@
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
-    background-image: url("images/table.png");
+    font-family: 'Who asks Satan', sans-serif;
+    background-image: url("images/background.gif");
     background-size: cover;
     font-weight: bold;
-    color: white;
+    color: rgb(111, 5, 6);
     text-align: center;
 }
 
 h1 {
-    color: goldenrod;
+    color: rgb(111, 5, 6);
+    font-size: 90px;
 }
 
 #message-el {
     font-style: italic;
+    font-size: 40px;
+    color: #f2f7f4;
 }
 
 button {
-    color: #016f32;
+    color: #f2f7f4;
+    font-size: 20px;
     width: 150px;
-    background: goldenrod;
+    background: rgb(111, 5, 6);
     padding-top: 5px;
     padding-bottom: 5px;
     font-weight: bold;
@@ -26,4 +30,33 @@ button {
     border-radius: 2px;
     margin-bottom: 2px;
     margin-top: 2px;
+}
+
+p {
+    font-size: 50px;
+    color: #f2f7f4;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.card-image {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+}
+
+#content {
+    background-color: opacity(0.9);
+    background-color: rgba(42, 41, 41, 0.928);
+    flex-wrap: wrap;
+    display: inline-block;
+    padding: 10px;
+
+
 }

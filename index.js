@@ -1,3 +1,7 @@
+import { cardsOnScreen } from "./cardsOnScreen.js";
+
+let displayedCards = cardsOnScreen;
+
 let cards = [];
 let sum = 0;
 let hasBlackJack = false;
@@ -8,13 +12,17 @@ let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 let playerEl = document.getElementById("player-el");
 
+document.getElementById("start-btn").addEventListener("click", startGame);
+document.getElementById("new-card-btn").addEventListener("click", newCard);
+
 let player = {
-    name: "Per",
+    name: "Your name",
     chips: 145
 };
 
 playerEl.textContent = player.name + ": $" + player.chips;
 
+// shuffle cards instead and take first instead 
 function getRandomCard() {
     let randomNumber = Math.floor(Math.random() * 13) + 1;
     if (randomNumber > 10) {
@@ -43,9 +51,14 @@ function startGame() {
 }
 
 function renderGame() {
-    cardsEl.textContent = "Cards: ";
+    cardsEl.innerHTML = ""; // this resets the cards 
+
     for (let i = 0; i < cards.length; i++) {
-        cardsEl.textContent += cards[i] + " ";
+        let cardIndex = cards[i] - 1; // Subtract 1 to get the correct index
+        let cardImage = document.createElement("img");
+        cardImage.classList.add("card-image");
+        cardImage.setAttribute("src", displayedCards[cardIndex].imageUrl);
+        cardsEl.appendChild(cardImage);
     }
 
     sumEl.textContent = "Sum: " + sum;
