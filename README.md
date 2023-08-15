@@ -6,6 +6,12 @@
   
 </div>
 
+<div align="center">
+
+<a href="https://voluble-sprinkles-8dfd87.netlify.app/"><img src="https://img.shields.io/badge/-Click here to see it live-e9e3e6?style=for-the-badge"/></a>
+
+</div>
+
 ## Introduction
 
 This project presents a JavaScript implementation of the classic Blackjack card game. Test your luck and strategy in this interactive game of chance and skill, right in your browser.
