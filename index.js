@@ -57,7 +57,7 @@ function startGame() {
     let firstCard = getRandomCard();
     let secondCard = getRandomCard();
     cards.push(firstCard, secondCard);
-    sum = firstCard + secondCard;
+    sum = 10 + firstCard + secondCard;
     renderGame();
 }
 
